@@ -14,7 +14,7 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<!--这里如果不写版本会自动继承spring-boot-starter-parent里的版本号-->
 			<version>${mysql.version}</version>
-		</dependency>
+</dependency>
 ````
 ## 2. dao层定义UserMapper.xml文件和UserMapper类
 
@@ -30,7 +30,7 @@
                    <verbose>true</verbose>
                    <overwrite>true</overwrite>
                </configuration>
-           </plugin>
+</plugin>
 ````
 添加一个“Run运行”选项，使用maven运行mybatis-generator-maven-plugin插件，
 在 “Command line” 选项中输入“mybatis-generator:generate  -e”
@@ -69,9 +69,6 @@
 
 4. 只添加@Mapper注解或者（@MapperScan("com.example.demo.server.dao")）
 时idea会报错，但是可以运行，所以强迫症可以加一个@Repository。
-
-
-
 
 
 # restful接口
@@ -188,7 +185,8 @@
    }
 ````
 
-## 3.使用swagger2生成api文档（参考）
+## 3.使用swagger2生成api文档
+（参考http://blog.didispace.com/springbootswagger2/）
 1. 引入依赖
 ````xml
 <dependency>
