@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>thymeleaf示例</title>
+</head>
+<body>
+
+<h1 th:text = "${greeting}"></h1>
+<table  border="1" style="border-collapse:collapse;">
+    <tr>
+        <th>序号</th>
+        <th>名字</th>
+        <th>年龄</th>
+        <th>年龄阶段</th>
+    </tr>
+
+    <tr th:each="obj, objVs : ${users}">
+        <td th:text="${objVs.count}">状态序号，从1开始</td>
+        <td th:text="${obj.name}">名字</td>
+        <td th:text="${obj.age}">年龄</td>
+        <td><div th:if="${obj.age} lt 18">未成年</div>
+            <div th:if="${obj.age} ge 18 and ${obj.age} lt 70">成年</div>
+            <div th:if="${obj.age} ge 70">老年</div>
+        </td>
+    </tr>
+</table>
+<p th:if="1==1">结果为真</p>
+<p th:text="#{welcome}"></p>
+</body>
+</html>
