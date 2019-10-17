@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>security-core</artifactId>
+    <artifactId>security-browser</artifactId>
     <parent>
         <groupId>com.demo.security</groupId>
         <artifactId>security-parent</artifactId>
@@ -10,5 +10,14 @@
     </parent>
 
     <dependencies>
+        <dependency>
+            <groupId>com.demo.security</groupId>
+            <artifactId>security-core</artifactId>
+            <version>${demo.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session</artifactId>
+        </dependency>
     </dependencies>
 </project>
