@@ -15,11 +15,19 @@ public class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
     @Autowired
     private SecurityProperties securityProperties;
 
+    @Autowired
+    private MyAuthenticationSuccessHandler myAuthenticationSuccessHandler;
+
+    @Autowired
+    private MyAuthenticationFailureHandler myAuthenticationFailureHandler;
+
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.formLogin()
                 .loginPage(SecurityConstants.DEFAULT_AUTHENTICATION_REQUIRED_URL)
                 .loginProcessingUrl("/authentication/form")
+                .successHandler(myAuthenticationSuccessHandler)
+                .failureHandler(myAuthenticationFailureHandler)
                 .usernameParameter("user")
                 .passwordParameter("pwd")
                 .and()
